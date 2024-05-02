@@ -50,8 +50,9 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yariCap) {
+  let cevre = 2 * pi * yariCap
+  return cevre;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,8 +65,9 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap, pi) {
+ const alan = pi * Math.pow(yaricap,2);
+ return alan;
 }
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -99,32 +101,61 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+  enbuyuk = -Infinity;
+  enkucuk = Infinity;
+
+sayilar.forEach(sayi => {
+  if (sayi > enbuyuk) {
+    enbuyuk = sayi;
+  }
+  if (sayi < enkucuk) {
+    enkucuk = sayi;
+  }
+});
 
 // 3b çözümü:
 
-/* kodlar buraya */
-
+  ucetambolunenler = [];
+sayilar.forEach(sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi);
+  }
+});
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((acc, val) => acc + val, 0);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a, b) => a - b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+ tekraredensayilar = [];
+  const depo = {};
+
+  for(let sayi of sayilar) {
+    if(depo[sayi] === undefined) {
+      depo[sayi] = 1;
+    } else {
+      depo[sayi]++;
+    }
+  }
+  console.log(depo)
+  for (let key in depo) {
+    if (depo[key] > 1) {
+      tekraredensayilar.push(`${key} sayısı ${depo[key]} kere tekrar edilmiştir`);
+    }
+  }
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
-  console.log("Kodlar çalışıyor");
+  console.log("Kodlar çalişiyor");
   return "as";
 }
 sa();
